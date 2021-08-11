@@ -37,7 +37,7 @@ tasks.withType(Pmd){
 
 
 pmd {
-	toolVersion = '6.0.0'
+	toolVersion = '4.3'
 	ruleSets = [
 			"basic",
 			"braces",
