@@ -9,6 +9,8 @@
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 apply plugin: 'pmd'
+apply plugin: 'jacoco'
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -26,6 +28,16 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+	
+	testRuntime "org.slf4j:slf4j-api:1.7.10"
+}
+
+
+test {
+	reports {
+		junitXml.enabled = true
+		html.enabled = false
+	}
 }
 
 tasks.withType(Pmd){
@@ -34,7 +46,6 @@ tasks.withType(Pmd){
 		html.enabled=true
 	}
 }
-
 
 pmd {
 	toolVersion = '4.3'
