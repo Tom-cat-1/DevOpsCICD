@@ -76,3 +76,9 @@ pmd {
 	ignoreFailures = true
 	
 }
+
+jacocoTestReport {
+	reports {
+		xml.enabled  true
+	}
+}
