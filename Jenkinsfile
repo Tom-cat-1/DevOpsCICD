@@ -19,5 +19,13 @@ pipeline {
 
             agent any
           }
+        stage('Gradle pmd') {
+            steps {
+               sh 'sudo chmod 777 ./gradlew' 
+               sh './gradlew pmdMain' 
+            }
+
+            agent any
+          }
     }
 }
