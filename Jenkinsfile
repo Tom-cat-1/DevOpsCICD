@@ -16,9 +16,7 @@ pipeline {
                sh './gradlew compile' 
             }
 
-            agent {
-              label any
-            }
+            agent any
           }
     }
 }
