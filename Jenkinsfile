@@ -17,11 +17,7 @@ pipeline {
             }
 
             agent {
-              label 'linux_agent'
-            }
-
-            tools {
-              gradle 'mygradle'
+              label any
             }
           }
     }
