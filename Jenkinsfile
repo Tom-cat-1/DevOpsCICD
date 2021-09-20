@@ -13,6 +13,7 @@ pipeline {
         
         stage('Gradle Compile') {
             steps {
+               sh 'sudo chmod 777 ./gradlew' 
                sh './gradlew compile' 
             }
 
