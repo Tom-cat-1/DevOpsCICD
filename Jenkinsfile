@@ -1,6 +1,6 @@
 pipeline {
     tools{
-        jdk 'myjava'
+        jdk 'myjdk'
     }
     agent none
     stages{
