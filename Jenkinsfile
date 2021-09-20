@@ -32,7 +32,7 @@ pipeline {
         stage('Gradle test') {
             steps {
                sh 'sudo chmod 777 ./gradlew' 
-               sh './gradlew testJava' 
+               sh './gradlew test' 
             }
 
             agent any
