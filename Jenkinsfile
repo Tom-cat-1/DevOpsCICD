@@ -19,10 +19,40 @@ pipeline {
 
             agent any
           }
+        
         stage('Gradle pmd') {
             steps {
                sh 'sudo chmod 777 ./gradlew' 
                sh './gradlew pmdMain' 
+            }
+
+            agent any
+          }
+        
+        stage('Gradle test') {
+            steps {
+               sh 'sudo chmod 777 ./gradlew' 
+               sh './gradlew testJava' 
+            }
+
+            agent any
+          }
+         
+        stage('Gradle cc') {
+            steps {
+               sh 'sudo chmod 777 ./gradlew' 
+               sh './gradlew jacocoTestReport'
+               sh './gradlew jacocoTestCoverageVerification' 
+            }
+
+            agent any
+          }
+		
+		
+        stage('Gradle package') {
+            steps {
+               sh 'sudo chmod 777 ./gradlew' 
+               sh './gradlew jar'
             }
 
             agent any
