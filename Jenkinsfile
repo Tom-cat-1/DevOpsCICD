@@ -13,7 +13,7 @@ pipeline {
         
         stage('Gradle Compile') {
             steps {
-               gradle 'compileJava'
+               sh './gradlew compile' 
             }
 
             agent {
