@@ -10,5 +10,19 @@ pipeline {
                git 'https://github.com/Tom-cat-1/DevOpsClassCodes.git'
             }
         }
+        
+        stage('Gradle Compile') {
+            steps {
+               gradle 'compileJava'
+            }
+
+            agent {
+              label 'linux_agent'
+            }
+
+            tools {
+              gradle 'mygradle'
+            }
+          }
     }
 }
